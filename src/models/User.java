@@ -1,7 +1,5 @@
 package models;
 
-import java.util.Date;
-
 public class User {
 
     private Integer id;
@@ -9,9 +7,26 @@ public class User {
     private String email;
     private String phone;
     private Integer document;
-    private Date birthday;
+    private Event event;
+
+    public User(Integer id, String name, String email, String phone, Integer document) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.document = document;
+        this.event = event;
+    }
 
     public User() {
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
     public Integer getId() {
@@ -26,7 +41,7 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String s) {
         this.name = name;
     }
 
@@ -54,11 +69,4 @@ public class User {
         this.document = document;
     }
 
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
 }
