@@ -52,9 +52,6 @@ public class Main {
                 default:
                     System.out.println("Opção inválida");
             }
-
-            //FileService.saveToFile();
-
         }
         scanner.close();
     }

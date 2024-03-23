@@ -8,31 +8,6 @@ import models.User;
 
 public class UserController {
 
-   /* public static List<User> cadastrarNovoUsuario(Scanner scanner, List<User> userList) {
-        System.out.print("ID do usuário: ");
-        int id = scanner.nextInt();
-        scanner.nextLine(); // Limpar o buffer do scanner
-
-        System.out.print("Nome do usuário: ");
-        String name = scanner.nextLine();
-
-        System.out.print("E-mail do usuário: ");
-        String email = scanner.nextLine();
-    
-        System.out.print("Telefone do usuário: ");
-        String phone = scanner.nextLine();
-
-        System.out.print("Documento do usuário: ");
-        int document = scanner.nextInt();
-        scanner.nextLine(); // Limpar o buffer do scanner
-
-        // Criar um novo usuário com os dados fornecidos
-        User novoUsuario = new User(id, name, email, phone, document, null);
-        userList.add(novoUsuario);
-
-        return userList;
-    }*/
-
     public static List<User> createUsers(Scanner scanner) {
         List<User> users = new ArrayList<>();
         
