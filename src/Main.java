@@ -1,9 +1,15 @@
+import controllers.UserController;
+import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
+import models.User;
+import services.FileService;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
+
         boolean continuar = true;
 
         while (continuar) {
@@ -20,8 +26,10 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    System.out.println("Criar Usuário");
-                    break;
+                    String path = "dados_user.txt";
+                    List<User> users = UserController.createUsers(scanner);
+                    FileService.saveUsersToFile(users, path);
+                break;
                 case 2:
                     System.out.println("Listar Usuários");
                     break;
@@ -44,6 +52,9 @@ public class Main {
                 default:
                     System.out.println("Opção inválida");
             }
+
+            //FileService.saveToFile();
+
         }
         scanner.close();
     }

@@ -6,10 +6,10 @@ public class User {
     private String name;
     private String email;
     private String phone;
-    private Integer document;
+    private String document;
     private Event event;
 
-    public User(Integer id, String name, String email, String phone, Integer document) {
+    public User(Integer id, String name, String email, String phone, String document) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -19,6 +19,9 @@ public class User {
     }
 
     public User() {
+    }
+
+    public User(Integer id, String name, String email, String phone, Integer document, Event event) {
     }
 
     public Event getEvent() {
@@ -61,12 +64,23 @@ public class User {
         this.phone = phone;
     }
 
-    public Integer getDocument() {
+    public String getDocument() {
         return document;
     }
 
-    public void setDocument(Integer document) {
+    public void setDocument(String document) {
         this.document = document;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", document=" + document +
+                ", event=" + event +
+                '}';
+    }
 }
