@@ -5,7 +5,7 @@ import java.util.Date;
 public class Event {
 
     private Integer id;
-    private User user;
+    private String user;
     private String name;
     private String address;
     private Date date;
@@ -13,6 +13,16 @@ public class Event {
     private EventType category;
 
     public Event() {
+    }
+
+    public Event(Integer id, String user, String name, String address, Date date, String description, EventType category) {
+        this.id = id;
+        this.user = user;
+        this.name = name;
+        this.address = address;
+        this.date = date;
+        this.description = description;
+        this.category = category;
     }
 
     public Integer getId() {
@@ -23,11 +33,11 @@ public class Event {
         this.id = id;
     }
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(String user) {
         this.user = user;
     }
 

@@ -1,7 +1,9 @@
+import controllers.EventController;
 import controllers.UserController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
+import models.Event;
 import models.User;
 import services.FileService;
 
@@ -26,9 +28,9 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    String path = "dados_user.txt";
+                    String pathFileDataUser = "dados_user.txt";
                     List<User> users = UserController.createUsers(scanner);
-                    FileService.saveUsersToFile(users, path);
+                    FileService.saveUsersToFile(users, pathFileDataUser);
                 break;
                 case 2:
                     UserController.listUsers();
@@ -37,8 +39,9 @@ public class Main {
                     System.out.println("Deletar Usuário");
                     break;
                 case 4:
-                    System.out.println("Criar Evento");
-                    break;
+                    String pathFileDataEvent = "dados_event.txt";
+                    List<Event> events = EventController.createEvent(scanner);
+                    FileService.saveEventsToFile(events, pathFileDataEvent);
                 case 5:
                     System.out.println("Listar Eventos");
                     break;

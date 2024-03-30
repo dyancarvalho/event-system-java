@@ -2,6 +2,7 @@ package services;
 
 import java.io.*;
 import java.util.List;
+import models.Event;
 import models.User;
 
 public class FileService {
@@ -23,6 +24,28 @@ public class FileService {
 
         } catch (IOException e) {
             System.out.println("Erro ao salvar dados dos usuários: " + e.getMessage());
+        }
+    }
+
+    public static void saveEventsToFile(List<Event> events, String path) throws IOException {
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Dyanz\\OneDrive\\Documentos\\dados_event.txt", true))) {
+            for (Event event : events) {
+                writer.write("Id: " + event.getId() + "\n" +
+                        "Criador: " + event.getUser() + "\n" +
+                        "Nome: " + event.getName() + "\n" +
+                        "Endereço: " + event.getAddress() + "\n" +
+                        "Data: " + event.getDate() + "\n" +
+                        "Descrição: " + event.getDescription() + "\n" +
+                        "Categoria: " + event.getCategory() + "\n\n\""
+                );
+                writer.newLine();
+            }
+            writer.close();
+            System.out.println("Dados dos eventos salvos com sucesso.");
+
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar dados dos eventos: " + e.getMessage());
         }
     }
 
