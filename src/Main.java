@@ -17,10 +17,8 @@ public class Main {
         while (continuar) {
             System.out.println("1 - Criar novo usuário");
             System.out.println("2 - Listar usuários");
-            System.out.println("3 - Deletar usuário");
-            System.out.println("4 - Criar novo evento");
-            System.out.println("5 - Listar eventos");
-            System.out.println("6 - Deletar evento");
+            System.out.println("3 - Criar novo evento");
+            System.out.println("4 - Listar eventos");
             System.out.println("0 - Sair do programa");
 
             System.out.print("Qual operação deseja realizar? ");
@@ -36,17 +34,11 @@ public class Main {
                     UserController.listUsers();
                     break;
                 case 3:
-                    System.out.println("Deletar Usuário");
-                    break;
-                case 4:
                     String pathFileDataEvent = "dados_event.txt";
                     List<Event> events = EventController.createEvent(scanner);
                     FileService.saveEventsToFile(events, pathFileDataEvent);
-                case 5:
+                case 4:
                     EventController.listEvents();
-                    break;
-                case 6:
-                    System.out.println("Deletar Evento");
                     break;
                 case 0:
                     System.out.println("Encerrando o programa.");
