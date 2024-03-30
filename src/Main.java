@@ -31,7 +31,7 @@ public class Main {
                     FileService.saveUsersToFile(users, path);
                 break;
                 case 2:
-                    System.out.println("Listar Usuários");
+                    UserController.listUsers();
                     break;
                 case 3:
                     System.out.println("Deletar Usuário");

@@ -1,9 +1,11 @@
 package controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import models.User;
+import services.FileService;
 
 
 public class UserController {
@@ -43,6 +45,10 @@ public class UserController {
         }
 
         return users;
+    }
+
+    public static void listUsers() throws IOException {
+        FileService.openFile();
     }
 
 

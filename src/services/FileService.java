@@ -25,4 +25,20 @@ public class FileService {
             System.out.println("Erro ao salvar dados dos usuários: " + e.getMessage());
         }
     }
+
+    public static void openFile() throws IOException {
+
+        try (FileReader fileReader = new FileReader("C:\\Users\\Dyanz\\OneDrive\\Documentos\\dados_user.txt");
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
+            String linha;
+            while ((linha = bufferedReader.readLine()) != null) {
+                System.out.println(linha);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Erro ao abrir dados dos usuários: " + e.getMessage());
+        }
+    }
+
 }
