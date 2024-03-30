@@ -49,9 +49,24 @@ public class FileService {
         }
     }
 
-    public static void openFile() throws IOException {
+    public static void openUsersToFile() throws IOException {
 
         try (FileReader fileReader = new FileReader("C:\\Users\\Dyanz\\OneDrive\\Documentos\\dados_user.txt");
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
+            String linha;
+            while ((linha = bufferedReader.readLine()) != null) {
+                System.out.println(linha);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Erro ao abrir dados dos usuários: " + e.getMessage());
+        }
+    }
+
+    public static void openEventsToFile() throws IOException {
+
+        try (FileReader fileReader = new FileReader("C:\\Users\\Dyanz\\OneDrive\\Documentos\\dados_event.txt");
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
             String linha;

@@ -43,7 +43,7 @@ public class Main {
                     List<Event> events = EventController.createEvent(scanner);
                     FileService.saveEventsToFile(events, pathFileDataEvent);
                 case 5:
-                    System.out.println("Listar Eventos");
+                    EventController.listEvents();
                     break;
                 case 6:
                     System.out.println("Deletar Evento");

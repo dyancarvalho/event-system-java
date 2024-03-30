@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 import models.Event;
 import models.EventType;
+import services.FileService;
 
 public class EventController {
 
@@ -63,6 +65,10 @@ public class EventController {
             }
         }
         return events;
+    }
+
+    public static void listEvents() throws IOException {
+        FileService.openEventsToFile();
     }
 
 }

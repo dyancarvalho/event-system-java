@@ -48,7 +48,7 @@ public class UserController {
     }
 
     public static void listUsers() throws IOException {
-        FileService.openFile();
+        FileService.openUsersToFile();
     }
 
 
